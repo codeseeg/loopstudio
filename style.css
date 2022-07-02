@@ -1,0 +1,690 @@
+*, body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: purple;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 0%;
+  height: 5px;
+  background-color: white;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover::before {
+  width: 100%;
+  max-width: 50px;
+}
+
+.headings, header #landing-text p, .interactive #inter-text #leader-head, .creations p, .creations h2 {
+  text-transform: uppercase;
+  font-size: 1.9em;
+  font-weight: 500;
+}
+
+.navFixed {
+  position: fixed;
+  background-color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+}
+
+.slide-in {
+  opacity: 1;
+}
+
+.remove-slide {
+  margin-top: 5em;
+  opacity: 0.07;
+}
+
+.creations div:hover .bg-filter {
+  background: rgba(109, 109, 109, 0.752);
+  top: -15.5px;
+  left: -4px;
+}
+
+#container {
+  width: 100%;
+  min-width: 370px;
+  padding: 0;
+  text-align: center;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.menu-show {
+  display: block;
+}
+
+.menu-list {
+  background-color: black;
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  right: 0;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "logo hamburger" "ul ul";
+  width: 100%;
+  min-height: 500px;
+  height: 100vh;
+  padding: 2em;
+}
+
+.menu-list img {
+  display: inline-block;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: logo;
+}
+
+.menu-list ul {
+  display: block;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: ul;
+  text-align: left;
+}
+
+.menu-list ul li a {
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  display: block;
+  margin-bottom: 0.7em;
+}
+
+.menu-list #hamburger {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: hamburger;
+  height: 3em;
+}
+
+header {
+  background: url("/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  place-content: center;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  min-height: 600px;
+  position: relative;
+}
+
+header nav {
+  background-color: transparent;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.4em 0.6em 0.7em;
+  position: absolute;
+  top: 0;
+  -webkit-transition: 1s;
+  transition: 1s;
+  z-index: 100000;
+}
+
+header nav ul {
+  display: none;
+}
+
+header #landing-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  place-content: center;
+  width: 95%;
+  height: 50%;
+  margin: auto;
+  padding: .5em 2em;
+  text-align: left;
+  border: 1px solid white;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+header #landing-text p {
+  margin: auto;
+  color: white;
+  font-weight: lighter;
+  font-size: 2.5em;
+  height: 50%;
+}
+
+.interactive {
+  padding: 5em 1em 1.5em 1em;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.interactive #inter-img img {
+  display: block;
+  margin: auto;
+  width: 90%;
+}
+
+.interactive #inter-text {
+  padding: 3em 1em;
+}
+
+.interactive #inter-text p {
+  font-size: 1em;
+  text-align: center;
+  font-weight: 500;
+  color: #8c8c8c;
+  line-height: 1.5em;
+  font-family: "Alata";
+}
+
+.interactive #inter-text #leader-head {
+  color: black;
+  margin-bottom: 0.5em;
+}
+
+.creations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.creations h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.creations div {
+  margin: 1em 0.2em;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  min-height: 140px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.creations div .bg-filter {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.568)), to(rgba(255, 255, 255, 0)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.568), rgba(255, 255, 255, 0));
+  position: absolute;
+  top: -15px;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+}
+
+.creations div h3 {
+  width: 40%;
+  height: 100%;
+  position: absolute;
+  top: 30%;
+  left: 7%;
+  z-index: 1000;
+  text-transform: uppercase;
+  font-size: 1.45em;
+  padding: 0.6em;
+  font-weight: lighter;
+  color: #cdcbcb;
+  font-family: "Josefin Sans", Arial, Helvetica, sans-serif;
+}
+
+.creations #deep {
+  background-image: url("/mobile/image-deep-earth.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #night {
+  background-image: url("/mobile/image-night-arcade.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #soccer {
+  background-image: url("/mobile/image-soccer-team.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #grid {
+  background-image: url("/mobile/image-grid.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #above {
+  background-image: url("/mobile/image-from-above.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #pocket {
+  background-image: url("/mobile/image-pocket-borealis.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #curios {
+  background-image: url("/mobile/image-curiosity.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations #fisheye {
+  background-image: url("/mobile/image-fisheye.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.creations button {
+  background-color: transparent;
+  border: 0.15em solid dimgray;
+  width: 45%;
+  height: 100%;
+  padding: 0.7em;
+  text-transform: uppercase;
+  font-size: 0.84em;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+  font-family: "Alata";
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  position: relative;
+}
+
+.creations button:hover {
+  background-color: black;
+  width: 50%;
+  color: white;
+}
+
+footer {
+  background-color: black;
+  padding: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  place-content: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+footer #top {
+  text-align: center;
+}
+
+footer #top img {
+  display: block;
+  width: 15em;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+footer #top ul {
+  text-align: center;
+  padding: 0.3em;
+}
+
+footer #top ul li {
+  list-style: none;
+  padding: 1em;
+}
+
+footer #top ul li a {
+  text-decoration: none;
+  font-size: 1em;
+  color: white;
+  padding: 0.4em;
+}
+
+footer #bottom {
+  text-align: center;
+  width: 100%;
+  margin-top: 0.8em;
+}
+
+footer #bottom div {
+  text-align: center;
+}
+
+footer #bottom div a {
+  display: inline-block;
+  margin-inline: 0.3em;
+  padding: 1em 0;
+}
+
+footer #bottom div p {
+  color: #8c8c8c;
+  font-size: 1em;
+}
+
+@media screen and (min-width: 1025px) {
+  .headings, header #landing-text p, .interactive #inter-text #leader-head, .creations p, .creations h2 {
+    font-size: 2.5em;
+  }
+  .navFixed {
+    margin-top: 0;
+    padding-inline: 5em;
+  }
+  header {
+    background: url("/desktop/image-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    place-content: center;
+    width: 100%;
+    background-size: 100% 100%;
+    text-align: left;
+    padding-left: 2em;
+    padding-top: 2em;
+  }
+  header #landing-text {
+    width: 35em;
+    height: 15em;
+    margin-left: 5em;
+    padding: 3em;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  header #landing-text p {
+    width: 100%;
+    height: 100%;
+    font-size: 4em;
+  }
+  header nav {
+    margin-top: 3em;
+    padding-inline: 5em;
+    width: 100%;
+    height: 80px;
+  }
+  header nav #hamburger {
+    display: none;
+  }
+  header nav ul {
+    text-align: center;
+    padding: 0.3em;
+    display: block;
+  }
+  header nav ul li {
+    display: inline-block;
+    list-style: none;
+    padding: 1em;
+  }
+  header nav ul li a {
+    text-decoration: none;
+    font-size: 1.3vw;
+    color: white;
+    padding: 0.4em;
+  }
+  header nav img {
+    width: 20%;
+  }
+  .interactive {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    place-content: center;
+    padding: 8em 2em 0 10em;
+  }
+  .interactive #inter-img {
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    height: 35em;
+  }
+  .interactive #inter-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .interactive #inter-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    place-content: center;
+    text-align: left;
+    padding: 2em 0 0 7em;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    background-color: white;
+    height: 25em;
+    -webkit-transform: translate(-22%, 50%);
+            transform: translate(-22%, 50%);
+  }
+  .interactive #inter-text #leader-head {
+    font-size: 2.5vw;
+    width: 70%;
+  }
+  .interactive #inter-text p {
+    font-size: 1em;
+    text-align: left;
+    width: 100%;
+    margin-bottom: -5em;
+  }
+  .creations {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 13px;
+    padding-top: 5em;
+    padding: 8em 10em 0 10em;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  .creations h2 {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / span 2;
+    text-align: left;
+    width: 50%;
+  }
+  .creations div {
+    width: 100%;
+    height: 600px;
+  }
+  .creations div h3 {
+    width: 80%;
+    top: 60%;
+    left: 5%;
+    font-size: 2.5vw;
+  }
+  .creations #deep {
+    background-image: url("/desktop/image-deep-earth.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #night {
+    background-image: url("/desktop/image-night-arcade.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #soccer {
+    background-image: url("/desktop/image-soccer-team.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #grid {
+    background-image: url("/desktop/image-grid.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #above {
+    background-image: url("/desktop/image-from-above.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #pocket {
+    background-image: url("/desktop/image-pocket-borealis.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #curios {
+    background-image: url("/desktop/image-curiosity.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #fisheye {
+    background-image: url("/desktop/image-fisheye.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  .creations #see-all {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 3 / span 2;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1/2;
+    text-align: right;
+    height: 50px;
+  }
+  .creations #see-all button {
+    width: auto;
+    height: auto;
+    padding: 0.7em 2.5em;
+    font-size: 1em;
+    letter-spacing: 0.5em;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    place-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer #top {
+    text-align: left;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    padding: 0;
+  }
+  footer #top img {
+    width: 8em;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+  footer #top ul {
+    text-align: left;
+    padding: 0;
+  }
+  footer #top ul li {
+    padding-bottom: 0;
+    padding-left: 0;
+    display: inline-block;
+  }
+  footer #top ul li a {
+    padding-left: 0;
+    font-size: 0.9em;
+  }
+  footer #bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    place-content: center;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+    padding-top: 0;
+    height: 100%;
+  }
+  footer #bottom div {
+    margin: 0;
+    margin-top: -1.5em;
+    text-align: right;
+  }
+  footer #bottom div a {
+    margin-left: 1em;
+  }
+  footer #bottom div a img {
+    width: 1.2em;
+  }
+  footer #bottom div p {
+    font-size: 0.8em;
+    margin-top: 1.5em;
+  }
+}
+/*# sourceMappingURL=style.css.map */

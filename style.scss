@@ -1,0 +1,613 @@
+@import "reset";
+@import "variables";
+
+a {
+  position: relative;
+  text-decoration: none;
+
+  color: purple;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 5px;
+    background-color: $white;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    transition: 0.5s;
+    &::before {
+      width: 100%;
+      max-width: 50px;
+    }
+  }
+}
+.headings {
+  text-transform: uppercase;
+  font-size: 1.9em;
+  font-weight: 500;
+}
+
+.navFixed {
+  position: fixed;
+  background-color: $Black;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+}
+
+.slide-in {
+  opacity: 1;
+}
+
+.remove-slide {
+  margin-top: 5em;
+  opacity: 0.07;
+}
+
+.creations div:hover .bg-filter {
+  background: rgba(109, 109, 109, 0.752);
+  top: -15.5px;
+  left: -4px;
+}
+
+#container {
+  width: 100%;
+  min-width: 370px;
+  padding: 0;
+  text-align: center;
+  font-family: $Josefin-font;
+  position: relative;
+}
+
+.menu-show {
+  display: block;
+}
+
+.menu-list {
+  background-color: $Black;
+  position: fixed;
+  z-index: 5000;
+  top: 0;
+  right: 0;
+  display: grid;
+  grid-template-areas: "logo hamburger" "ul ul";
+  width: 100%;
+  min-height: 500px;
+  height: 100vh;
+  padding: 2em;
+
+  img {
+    display: inline-block;
+    grid-area: logo;
+  }
+
+  ul {
+    display: block;
+    grid-area: ul;
+    text-align: left;
+    li {
+      a {
+        font-size: 2em;
+        text-transform: uppercase;
+        color: $white;
+        display: block;
+        margin-bottom: 0.7em;
+      }
+    }
+    // margin: -15em;
+  }
+
+  #hamburger {
+    grid-area: hamburger;
+    height: 3em;
+  }
+}
+
+header {
+  @include backgroundCenter("/mobile/image-hero.jpg");
+  @include flexCenter();
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  min-height: 600px;
+  position: relative;
+
+  nav {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4em 0.6em 0.7em;
+    position: absolute;
+    top: 0;
+    transition: 1s;
+    z-index: 100000;
+
+    ul {
+      display: none;
+    }
+  }
+
+  #landing-text {
+    @include flexCenter;
+    width: 95%;
+    height: 50%;
+    margin: auto;
+    padding: .5em 2em;
+    text-align: left;
+    border: 1px solid $white;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    p {
+      @extend .headings;
+      margin: auto;
+      color: $white;
+      font-weight: lighter;
+      //background-color: red;
+      font-size: 2.5em;
+      height: 50%;
+    }
+  }
+}
+
+.interactive {
+  padding: 5em 1em 1.5em 1em;
+  transition: 1s;
+
+  //   transform: translateY(20%);
+
+  #inter-img {
+    // @include bordr($color:$Very-Dark-Gray);
+
+    img {
+      display: block;
+      margin: auto;
+      width: 90%;
+    }
+  }
+
+  #inter-text {
+    padding: 3em 1em;
+
+    p {
+      font-size: 1em;
+      text-align: center;
+      font-weight: 500;
+      color: $Dark-Gray;
+      line-height: 1.5em;
+      font-family: $Alata;
+    }
+    #leader-head {
+      @extend .headings;
+      color: $Black;
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.creations {
+  @include flexCenter(column);
+  //   transform: translateY(20%);
+  transition: 1s;
+
+  p {
+    @extend .headings;
+  }
+
+  h2 {
+    @extend .headings;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  div {
+    margin: 1em 0.2em;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    min-height: 140px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.5s;
+
+    .bg-filter {
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.568),
+        rgba(255, 255, 255, 0)
+      );
+      position: absolute;
+      top: -15px;
+      left: -1px;
+      width: 100%;
+      height: 100%;
+    }
+
+    h3 {
+      width: 40%;
+      height: 100%;
+      position: absolute;
+      top: 30%;
+      left: 7%;
+      z-index: 1000;
+      text-transform: uppercase;
+      font-size: 1.45em;
+      padding: 0.6em;
+      font-weight: lighter;
+      color: rgb(205, 203, 203);
+      //font-weight: lighter;
+      //background-color: red;
+      font-family: $Josefin-font;
+    }
+  }
+
+  #deep {
+    @include background("/mobile/image-deep-earth.jpg");
+    //background: url("/mobile/image-deep-earth.jpg");
+  }
+
+  #night {
+    @include background("/mobile/image-night-arcade.jpg");
+  }
+
+  #soccer {
+    @include background("/mobile/image-soccer-team.jpg");
+  }
+
+  #grid {
+    @include background("/mobile/image-grid.jpg");
+  }
+
+  #above {
+    @include background("/mobile/image-from-above.jpg");
+  }
+
+  #pocket {
+    @include background("/mobile/image-pocket-borealis.jpg");
+  }
+
+  #curios {
+    @include background("/mobile/image-curiosity.jpg");
+  }
+
+  #fisheye {
+    @include background("/mobile/image-fisheye.jpg");
+  }
+
+  button {
+    background-color: transparent;
+    border: 0.15em solid $Very-Dark-Gray;
+    width: 45%;
+    height: 100%;
+    padding: 0.7em;
+    text-transform: uppercase;
+    font-size: 0.84em;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+    font-family: $Alata;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+
+    &:hover {
+      background-color: $Black;
+      width: 50%;
+      color: $white;
+    }
+  }
+}
+
+footer {
+  background-color: $Black;
+  padding: 4em;
+  @include flexCenter(column);
+  transition: 1s;
+
+  #top {
+    //@include flexCenter(column);
+    text-align: center;
+
+    img {
+      display: block;
+      width: 15em;
+      margin: auto;
+      margin-bottom: 2em;
+    }
+
+    ul {
+      text-align: center;
+      padding: 0.3em;
+
+      li {
+        list-style: none;
+        padding: 1em;
+
+        a {
+          text-decoration: none;
+          font-size: 1em;
+          color: $white;
+          padding: 0.4em;
+        }
+      }
+    }
+  }
+
+  #bottom {
+    text-align: center;
+    width: 100%;
+    margin-top: 0.8em;
+
+    div {
+      text-align: center;
+
+      a {
+        display: inline-block;
+        margin-inline: 0.3em;
+        padding: 1em 0;
+      }
+
+      p {
+        color: $Dark-Gray;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .headings {
+    font-size: 2.5em;
+  }
+
+  .navFixed {
+    margin-top: 0;
+    padding-inline: 5em;
+  
+  }
+
+  header {
+    @include backgroundCenter("/desktop/image-hero.jpg");
+    @include flexCenter();
+    width: 100%;
+    background-size: 100% 100%;
+    text-align: left;
+    padding-left: 2em;
+    padding-top: 2em;
+
+    #landing-text {
+      width: 35em;
+      height: 15em;
+      margin-left: 5em;
+      // margin-top: 3em;
+      padding: 3em;
+      
+    box-sizing: content-box;
+      p {
+        width: 100%;
+        height: 100%;
+        font-size: 4em;
+      }
+    }
+
+    // height: 100vh;
+    // min-height: 600px;
+    // padding-top: 1em;
+
+    nav {
+      margin-top: 3em;
+      padding-inline: 5em;
+      width: 100%;
+      height: 80px;
+
+      #hamburger {
+        display: none;
+      }
+
+      ul {
+        text-align: center;
+        padding: 0.3em;
+        display: block;
+
+        li {
+          display: inline-block;
+          list-style: none;
+          padding: 1em;
+
+          a {
+            text-decoration: none;
+            font-size: 1.3vw;
+            color: $white;
+            padding: 0.4em;
+          }
+        }
+      }
+
+      img {
+        width: 20%;
+
+      }
+    }
+  }
+
+  .interactive {
+    @include flexCenter;
+    padding: 8em 2em 0 10em;
+
+    #inter-img {
+      flex: 50%;
+      height: 35em;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    #inter-text {
+      @include flexCenter(column);
+      text-align: left;
+      padding: 2em 0 0 7em;
+      flex: 50%;
+      background-color: $white;
+      height: 25em;
+      transform: translate(-22%, 50%);
+
+      #leader-head {
+        font-size: 2.5vw;
+        width: 70%;
+
+      }
+
+      p {
+        font-size: 1em;
+        text-align: left;
+        width: 100%;
+        margin-bottom: -5em;
+      }
+    }
+  }
+
+  .creations {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 13px;
+    padding-top: 5em;
+    padding: 8em 10em 0 10em;
+    box-sizing: content-box;
+
+    h2 {
+      grid-column: 1 / span 2;
+      text-align: left;
+      width: 50%;
+    }
+
+    div {
+      width: 100%;
+      height: 600px;
+      h3 {
+        width: 80%;
+        top:60%;
+        left: 5%;
+        font-size: 2.5vw;
+        // background-color: red;
+      }
+    }
+
+    #deep {
+      @include background("/desktop/image-deep-earth.jpg");
+      //background: url("/desktop/image-deep-earth.jpg");
+    }
+
+    #night {
+      @include background("/desktop/image-night-arcade.jpg");
+    }
+
+    #soccer {
+      @include background("/desktop/image-soccer-team.jpg");
+    }
+
+    #grid {
+      @include background("/desktop/image-grid.jpg");
+    }
+
+    #above {
+      @include background("/desktop/image-from-above.jpg");
+    }
+
+    #pocket {
+      @include background("/desktop/image-pocket-borealis.jpg");
+    }
+
+    #curios {
+      @include background("/desktop/image-curiosity.jpg");
+    }
+
+    #fisheye {
+      @include background("/desktop/image-fisheye.jpg");
+    }
+
+    #see-all {
+      grid-column: 3 / span 2;
+      grid-row: 1/2;
+      text-align: right;
+      height: 50px;
+
+      button {
+        width: auto;
+        height: auto;
+        padding: 0.7em 2.5em;
+        font-size: 1em;
+        letter-spacing: 0.5em;
+      }
+    }
+  }
+
+  footer {
+    @include flexCenter(row);
+    justify-content: space-between;
+
+    #top {
+      text-align: left;
+      flex: 50%;
+      padding: 0;
+
+      img {
+        width: 8em;
+        margin-left: 0;
+        margin-bottom: 0;
+      }
+
+      ul {
+        text-align: left;
+        padding: 0;
+
+        li {
+          padding-bottom: 0;
+          padding-left: 0;
+
+          display: inline-block;
+          a {
+            padding-left: 0;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+
+    #bottom {
+      @include flexCenter(column);
+      flex: 50%;
+      padding-top: 0;
+      height: 100%;
+
+      div {
+        margin: 0;
+        margin-top: -1.5em;
+        a {
+          margin-left: 1em;
+          img {
+            width: 1.2em;
+          }
+        }
+        text-align: right;
+
+        p {
+          font-size: 0.8em;
+          margin-top: 1.5em;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min) {
+}

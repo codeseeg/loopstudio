@@ -1,0 +1,31 @@
+$white:  hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 0%);
+$Dark-Gray: hsl(0, 0%, 55%);
+$Very-Dark-Gray: hsl(0, 0%, 41%);
+$Josefin-font: "Josefin Sans", Arial, Helvetica, sans-serif ;
+$Alata: "Alata";
+
+@mixin backgroundCenter($image) {
+    background: url($image);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    background-size: 100%;
+  
+}
+
+
+@mixin background($image) {
+    background-image: url($image);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+@mixin flexCenter($dir:row, $place:center) {
+    display: flex;
+    flex-direction: $dir;
+   place-content: center;
+}
+
+@mixin bordr($width:1px,$color:yellow) {
+    border: $width solid $color;
+}
